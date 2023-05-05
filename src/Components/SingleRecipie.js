@@ -33,8 +33,8 @@ const SingleRecipie = ({ recipies, onDelete }) => {
                             <p style={{ textTransform: 'uppercase', color: '#fff' }}>{recipieToDisplay.recipie} <FontAwesomeIcon style={{ color: '#FF69B4' }} icon={faHeart} /></p>
                             <br />
                             <br />
-                            The Ingredients you will need are:
-                            <ul>
+                            <h3 style={{ color: '#fff', borderBottom: 'solid green 3px' }}>The Ingredients you will need are:</h3>
+                            <ul style={{ color: '#fff' }}>
                                 {recipieToDisplay &&
                                     recipieToDisplay.ingridients &&
                                     recipieToDisplay.ingridients.map((ingridient, index) => (
@@ -42,8 +42,8 @@ const SingleRecipie = ({ recipies, onDelete }) => {
                                     ))}
                             </ul>
                             <br />
-                            follow these steps:
-                            <ul>
+                            <h3 style={{ color: '#fff', borderBottom: 'solid #FF69B4 3px' }}>follow these steps:</h3>
+                            <ul style={{ listStyleType: "decimal", color: '#fff' }}>
                                 {recipieToDisplay &&
                                     recipieToDisplay.steps &&
                                     recipieToDisplay.steps.map((step, index) => (
