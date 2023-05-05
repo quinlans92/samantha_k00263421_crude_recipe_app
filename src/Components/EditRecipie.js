@@ -164,7 +164,7 @@ const EditRecipie = ({ recipies, onEdit }) => {
                         <div key={`step-${index}`} className="step input-group mb-3">
                             <input
                                 type="text"
-                                value={step}
+                                value={step || ''}
                                 onChange={(event) => handleStepsChange(event, index)}
                                 className="form-control"
                             />

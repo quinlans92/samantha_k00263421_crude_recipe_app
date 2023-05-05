@@ -38,7 +38,7 @@ const SingleRecipie = ({ recipies, onDelete }) => {
                                 {recipieToDisplay &&
                                     recipieToDisplay.ingridients &&
                                     recipieToDisplay.ingridients.map((ingridient, index) => (
-                                        <li key={index}>{`${ingridient.amount} : ${ingridient.measurement} - ${ingridient.name} `}</li>
+                                        <li key={index}>{`${ingridient.amount || ''} : ${ingridient.measurement || ''} - ${ingridient.name || ''} `}</li>
                                     ))}
                             </ul>
                             <br />
