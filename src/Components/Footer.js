@@ -1,11 +1,13 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
 
 const Footer = () => {
     return (
         <footer className="container-fluid footer">
             <div className="row">
                 <div style={{ color: '#fff' }} className="col-12 col-md-4 footer-section">
-                    <p>React Crude Recipe App.</p>
+                    <p>React Crude Recipe App.<FontAwesomeIcon style={{ color: '#FF69B4' }} icon={faHeart} /></p>
                     <p>&copy; 2023 | All Rights Reserved</p>
                 </div>
                 <div style={{ color: '#fff' }} className="col-12 col-md-4 footer-section">

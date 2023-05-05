@@ -7,7 +7,7 @@ const NavBar = () => {
         <div className="container-fluid">
             <div className="row">
                 <div className="col-12 col-md-4 nav-section">
-                    <img src="/images/logo.png" alt="Logo" style={{ padding: '10px', height: '200px', width: 'auto', marginTop: '40px' }} />
+                    <img src="/images/logo.png" alt="Logo" style={{ padding: '10px', height: '220px', width: 'auto', marginTop: '40px' }} />
                 </div>
                 <Navbar expand="md">
                     <Navbar.Toggle aria-controls="navbar-nav" />
