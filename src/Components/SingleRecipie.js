@@ -15,10 +15,10 @@ const SingleRecipie = ({ recipies, onDelete }) => {
     //     item.id === Number(urlParameters.recipieID)
     // ));
 
-    // const handleDelete = () => {
-    //     onDelete(recipieToDisplay.id);
-    //     navigate('/');
-    // }
+    const handleDelete = () => {
+        onDelete(recipieToDisplay.id);
+        navigate('/');
+    }
 
     const selectedRecipeIndex = recipies.findIndex(
         (recipe) => recipe.id === Number(urlParameters.recipieID)
@@ -35,10 +35,10 @@ const SingleRecipie = ({ recipies, onDelete }) => {
         setCurrentRecipeIndex((prevIndex) => prevIndex + 1);
     };
 
-    const handleDelete = () => {
-        onDelete(urlParameters.recipieID);
-        navigate('/');
-    };
+    // const handleDelete = () => {
+    //     onDelete(urlParameters.recipieID);
+    //     navigate('/');
+    // };
 
     const recipieToDisplay = recipies[currentRecipeIndex];
 
