@@ -1,23 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome, faHeart } from '@fortawesome/free-solid-svg-icons'
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const SingleRecipie = ({ recipies, onDelete }) => {
     const urlParameters = useParams();
     const navigate = useNavigate();
 
-    let recipieToDisplay;
+    // let recipieToDisplay;
 
-    recipieToDisplay = recipies.find((item) => (
-        item.id === Number(urlParameters.recipieID)
-    ));
+    // recipieToDisplay = recipies.find((item) => (
+    //     item.id === Number(urlParameters.recipieID)
+    // ));
+
+    // const handleDelete = () => {
+    //     onDelete(recipieToDisplay.id);
+    //     navigate('/');
+    // }
+
+    const selectedRecipeIndex = recipies.findIndex(
+        (recipe) => recipe.id === Number(urlParameters.recipieID)
+    );
+    const [currentRecipeIndex, setCurrentRecipeIndex] = useState(
+        selectedRecipeIndex >= 0 ? selectedRecipeIndex : 0
+    );
+
+    const handlePreviousRecipe = () => {
+        setCurrentRecipeIndex((prevIndex) => prevIndex - 1);
+    };
+
+    const handleNextRecipe = () => {
+        setCurrentRecipeIndex((prevIndex) => prevIndex + 1);
+    };
 
     const handleDelete = () => {
-        onDelete(recipieToDisplay.id);
+        onDelete(urlParameters.recipieID);
         navigate('/');
-    }
+    };
+
+    const recipieToDisplay = recipies[currentRecipeIndex];
 
     return (
         <div className="recipe-container">
@@ -69,6 +92,24 @@ const SingleRecipie = ({ recipies, onDelete }) => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <br />
+            <div className="navigation-arrows">
+                <button
+                    className="arrow-button"
+                    onClick={handlePreviousRecipe}
+                    disabled={currentRecipeIndex === 0}
+                >
+                    <FontAwesomeIcon icon={faArrowLeft} style={{ backgroundColor: 'green', fontSize: '22px' }} />
+                </button>
+                <button
+                    className="arrow-button"
+                    onClick={handleNextRecipe}
+                    disabled={currentRecipeIndex === recipies.length - 1}
+                >
+                    <FontAwesomeIcon icon={faArrowRight} style={{ backgroundColor: 'green', fontSize: '22px' }}
+                    />
+                </button>
             </div>
             <br />
             <Link to={`/`}>

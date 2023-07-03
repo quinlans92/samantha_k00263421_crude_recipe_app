@@ -17,7 +17,7 @@ const NavBar = () => {
                                 <Link style={{ textTransform: 'uppercase', textDecoration: 'none', color: 'green' }} to="/">Home</Link>
                             </Nav.Link>
                             <Nav.Link className="navHov" style={{ fontSize: '25px' }}>
-                                <Link style={{ textTransform: 'uppercase', textDecoration: 'none', color: 'green' }} to="/">Recipes</Link>
+                                <Link style={{ textTransform: 'uppercase', textDecoration: 'none', color: 'green' }} to="/recipie/1">Recipes</Link>
                             </Nav.Link>
                             <Nav.Link className="navHov" style={{ fontSize: '25px' }}>
                                 <Link style={{ textTransform: 'uppercase', textDecoration: 'none', color: 'green' }} to="/About">About</Link>

@@ -92,3 +92,23 @@
 .greenLink {
   color: green
 }
+
+.navigation-arrows {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.arrow-button {
+  background-color: green;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  color: #000;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  text-align: center;
+  border: 1px solid white;
+}

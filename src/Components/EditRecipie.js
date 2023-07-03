@@ -33,9 +33,6 @@ const EditRecipie = ({ recipies, onEdit }) => {
         setIngridients(updatedIngredients);
     };
 
-
-
-
     const handleIngredientsAmountChange = (event, index) => {
         const updatedIngredients = [...ingridients];
         updatedIngredients[index] = {
