@@ -12,7 +12,9 @@ const RecipieList = ({ recipies }) => {
         <div className="container-fluid" style={{ paddingTop: '30px' }}>
             <div className="row justify-content-center">
                 {recipies.map((item) => (
-                    <div className="col-md-4 col-sm-6 col-xs-12" key={item.id}
+                    <div
+                        className="col-md-4 col-sm-6 col-xs-12"
+                        key={item.id}
                         onMouseEnter={() => setHighlightedRecipe(item.id)}
                         onMouseLeave={() => setHighlightedRecipe(null)}
                         style={{
@@ -21,25 +23,40 @@ const RecipieList = ({ recipies }) => {
                             borderRadius: '9px',
                             textAlign: 'center',
                             textTransform: 'uppercase',
-                            margin: '50px',
+                            margin: '10px', // Adjust the margin value as needed for consistent spacing
                             fontWeight: 'bold',
                             backgroundColor: highlightedRecipe === item.id ? '#eee' : '#818386',
                             transition: 'background-color 0.2s ease-in-out',
-                        }}>
+                        }}
+                    >
                         <div className="card mb-3">
                             <Link to={`/recipie/${item.id}`}>
-                                <img src={item.image} alt="RecipieImage" className="card-img-top" style={{ height: '300px', objectFit: 'cover' }} />
+                                <img
+                                    src={item.image}
+                                    alt="RecipieImage"
+                                    className="card-img-top"
+                                    style={{ height: '300px', objectFit: 'cover' }}
+                                />
                             </Link>
                             <div className="card-body">
-                                <h2 className="card-title" style={{ color: '#fff' }}>{item.recipie} <FontAwesomeIcon icon={faHeart} style={{ color: '#FF69B4' }} /></h2>
-                                <Link style={{ textDecoration: 'none', color: '#fff' }} to={`/recipie/${item.id}`} className="btn btn-sm btn-secondary">View Recipe</Link>
+                                <h2 className="card-title" style={{ color: '#fff' }}>
+                                    {item.recipie} <FontAwesomeIcon icon={faHeart} style={{ color: '#FF69B4' }} />
+                                </h2>
+                                <Link
+                                    style={{ textDecoration: 'none', color: '#fff' }}
+                                    to={`/recipie/${item.id}`}
+                                    className="btn btn-sm btn-secondary"
+                                >
+                                    View Recipe
+                                </Link>
                             </div>
                         </div>
                     </div>
                 ))}
             </div>
-        </div >
+        </div>
     );
+
 
 
 

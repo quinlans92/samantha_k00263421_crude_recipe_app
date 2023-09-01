@@ -112,3 +112,21 @@
   text-align: center;
   border: 1px solid white;
 }
+
+/* Define a custom class for the logo */
+.custom-logo {
+  /* Set the initial size for the image */
+  max-width: 100%;
+  height: auto;
+}
+
+/* Apply styles for larger screens (e.g., screens wider than 1200px) */
+@media (min-width: 480px) {
+  .custom-logo {
+    /* Adjust the width and height for larger screens */
+    width: auto !important;
+    /* Adjust the desired width */
+    height: 110px !important;
+    /* Maintain the aspect ratio */
+  }
+}
